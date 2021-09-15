@@ -18,28 +18,30 @@
 #define vec			vector<int,int>
 #define PI          3.1415926535897932384626
 using namespace std;
-void printsubsequence(string s,string output,int index){
+void printsubsequence(string s, string output, int index) {
 // base condition
-//rukna hai : mtlb poora string traverse ho gya hai 
-if(index>=s.length()) {
-  cout<<output<<endl;
-  return;
-}
-// nhi lena hai 
-printsubsequence(s,output,index+1);
+//rukna hai : mtlb poora string traverse ho gya hai
+	if (index >= s.length()) {
+		cout << output << endl;
+		return;
+	}
+// not pick concept
+// nhi lena hai
+	printsubsequence(s, output, index + 1);
 
 //lena hai
-output.push_back(s[index]);
-printsubsequence(s,output,index+1);
+//pick concept
+	output.push_back(s[index]);
+	printsubsequence(s, output, index + 1);
 
 
 }
 
-int main(){
-  fastio();
-  string s;
-  string output;
-  getline(cin,s);
-  printsubsequence(s,output,0);
+int main() {
+	fastio();
+	string s;
+	string output;
+	getline(cin, s);
+	printsubsequence(s, output, 0);
 
 }
